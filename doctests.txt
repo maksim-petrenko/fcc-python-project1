@@ -1,0 +1,22 @@
+# doctests
+
+>>> from main import *
+
+>>> add_setting({'theme': 'light'}, ('THEME', 'dark'))
+"Setting 'theme' already exists! Cannot add a new setting with this name."
+
+>>> add_setting({'theme': 'light'}, ('volume', 'high'))
+"Setting 'volume' added with value 'high' successfully!"
+
+>>> update_setting({'theme': 'light'}, ('theme', 'dark'))
+"Setting 'theme' updated to 'dark' successfully!"
+
+>>> update_setting({'theme': 'light'}, ('volume', 'high'))
+"Setting 'volume' does not exist! Cannot update a non-existing setting."
+
+>>> delete_setting({'theme': 'light'}, 'theme')
+"Setting 'theme' deleted successfully!"
+
+>>> view_settings({'theme': 'dark', 'notifications': 'enabled', 'volume': 'high'})
+'Current User Settings:\nTheme: dark\nNotifications: enabled\nVolume: high\n'
+
